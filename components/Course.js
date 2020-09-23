@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
+
 const getCourseNumber = course => (
   course.id.slice(1)
 )

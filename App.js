@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, Text} from 'react-native';
 import CourseList from './components/CourseList';
 
+
 const App = () => {
   const [schedule, setSchedule] = useState({ title: '', courses: [] });
   
