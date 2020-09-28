@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Platform } from 'react-native';
 import Form from '../components/Form';
 import * as Yup from 'yup';
 
@@ -17,12 +17,17 @@ const validationSchema = Yup.object().shape({
       .label('Title'),
   });
 
-const CourseEditScreen = ({navigation, route}) => {
+const CourseEditScreen = ({route}) => {
     const course = route.params.course;
     
     return (
         <SafeAreaView style={styles.container}>
-          <ScrollView>
+          <ScrollView 
+          style={
+            Platform.OS === "ios" || Platform.OS === "android"
+            ? styles.formContainer
+            : null
+        }>
           <Form
           initialValues={{
             id: course.id,
@@ -61,6 +66,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#acc8b3'
+  },
+  formContainer: {
+    width: "60%",
   },
 });
 
