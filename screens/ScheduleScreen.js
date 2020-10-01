@@ -36,7 +36,7 @@ const ScheduleScreen = ({navigation}) => {
 };
 
 const Banner = ({title}) => (
-  <Text style={styles.bannerStyle}>{title || '[loading...]'}</Text>
+  <Text style={styles.bannerStyle}>{title || 'loading...'}</Text>
 );
 
 const styles = StyleSheet.create({
